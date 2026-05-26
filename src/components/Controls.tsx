@@ -75,6 +75,10 @@ export function Controls({
           DFS
         </option>
 
+        <option value="IDDFS">
+          IDDFS
+        </option>
+
       </select>
 
       <div

@@ -2,12 +2,14 @@ type Props = {
   moves: number
   exploredNodes: number
   executionTime: number
+  visualSolveTime: number
 }
 
 export function Metrics({
   moves,
   exploredNodes,
-  executionTime
+  executionTime,
+  visualSolveTime,
 }: Props){
 
   return (
@@ -30,7 +32,22 @@ export function Metrics({
       </div>
 
       <div>
-        Tiempo: {executionTime.toFixed(2)} ms
+        Tiempo computacional:
+        {" "}
+
+        {
+          executionTime.toFixed(2)
+        }s
+      </div>
+
+      <div>
+
+        Tiempo visual:
+        {" "}
+
+        {
+          visualSolveTime.toFixed(2)
+        }s
       </div>
 
     </div>

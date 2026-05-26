@@ -7,20 +7,17 @@ from "../constants/goal"
 import type { Node }
 from "../types/node"
 
-export function dfs(
-  initialState: number[],
-  maxDepth = 30
-){
+export function dls(
 
-  const startTime =
-    performance.now()
+  initialState: number[],
+
+  limit: number
+){
 
   const visited =
     new Set<string>()
 
   const stack: Node[] = []
-
-  let exploredNodes = 0
 
   const root: Node = {
 
@@ -34,8 +31,6 @@ export function dfs(
   stack.push(root)
 
   while(stack.length > 0){
-
-    exploredNodes++
 
     const current =
       stack.pop()!
@@ -56,42 +51,27 @@ export function dfs(
 
     if(isGoal){
 
-      const endTime =
-        performance.now()
-
-      return {
-
-        solution: current,
-
-        exploredNodes,
-
-        executionTime:
-          endTime - startTime
-      }
+      return current
     }
-    if(current.depth >= maxDepth){
+
+    if(current.depth >= limit){
       continue
     }
+
     const neighbors =
       getNeighbors(current.state)
 
     for(const neighbor of neighbors){
 
-      const neighborKey =
-        neighbor.toString()
+      stack.push({
 
-      if(!visited.has(neighborKey)){
+        state: neighbor,
 
-        stack.push({
+        parent: current,
 
-          state: neighbor,
-
-          parent: current,
-
-          depth:
-            current.depth + 1
-        })
-      }
+        depth:
+          current.depth + 1
+      })
     }
   }
 

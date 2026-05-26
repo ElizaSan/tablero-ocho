@@ -1,7 +1,6 @@
 import { create } from "zustand"
 
-import { generateBoard }
-from "../utils/generateBoard"
+import { generateBoard } from "../utils/generateBoard"
 
 type PuzzleStore = {
 
@@ -43,19 +42,78 @@ type PuzzleStore = {
   shuffleBoard:
     () => void
 
-   isSolving: boolean
+  isSolving: boolean
 
    setIsSolving:
-    (isSolving: boolean) => void 
+    (isSolving: boolean) => void
+    
+  message: string
+
+  setMessage:
+    (message: string) => void  
+
+  playerBoard: number[]
+
+  setPlayerBoard:
+    (board: number[]) => void  
+
+  countdown: number | null
+
+  setCountdown:
+    (countdown: number | null)
+      => void
+  
+  isPlaying: boolean
+
+  setIsPlaying:
+    (isPlaying: boolean)
+      => void    
+
+  gameStartTime: number | null
+
+  setGameStartTime:
+    (time: number | null)
+      => void
+
+  algorithmFinishTime: number | null
+
+  setAlgorithmFinishTime:
+    (time: number | null)
+      => void
+
+  playerTotalTime: number | null
+
+  setPlayerTotalTime:
+    (time: number | null)
+      => void    
+  
+  visualSolveTime: number
+
+  setVisualSolveTime:
+    (time: number) => void    
+
+
 }
 
 export const usePuzzleStore =
-  create<PuzzleStore>((set) => ({
+  create<PuzzleStore>((set) => {
 
-    board: generateBoard(),
+    const initialBoard =
+      generateBoard()
 
-    setBoard:
-      (board) => set({ board }),
+    return ({
+
+      board: initialBoard,
+
+      setBoard:
+        (board) => set({ board }),
+
+      playerBoard: initialBoard,
+
+      setPlayerBoard:
+        (playerBoard) =>
+          set({ playerBoard }),
+
 
     moves: 0,
 
@@ -91,6 +149,13 @@ export const usePuzzleStore =
     (isSolving) =>
         set({ isSolving }),
 
+    message: "",
+
+    setMessage:
+      (message) =>
+        set({ message }),
+
+
     stopRequested: false,
 
     setStopRequested:
@@ -99,14 +164,64 @@ export const usePuzzleStore =
 
 
     shuffleBoard:
-      () => set({
+      () => {
 
-        board: generateBoard(),
+        const newBoard =
+          generateBoard()
 
-        moves: 0,
+        set({
 
-        exploredNodes: 0,
+          board: newBoard,
 
-        executionTime: 0
-      })
-  }))
+          playerBoard: newBoard,
+
+          moves: 0,
+
+          exploredNodes: 0,
+
+          executionTime: 0
+        })
+      },
+
+      countdown: null,
+
+    setCountdown:
+      (countdown) =>
+        set({ countdown }),
+
+    isPlaying: false,
+
+    setIsPlaying:
+      (isPlaying) =>
+        set({ isPlaying }),  
+
+    
+    gameStartTime: null,
+
+    setGameStartTime:
+      (gameStartTime) =>
+        set({ gameStartTime }),
+
+    algorithmFinishTime: null,
+
+    setAlgorithmFinishTime:
+      (algorithmFinishTime) =>
+        set({ algorithmFinishTime }),
+      
+    playerTotalTime: null,
+
+    setPlayerTotalTime:
+      (playerTotalTime) =>
+        set({ playerTotalTime }), 
+
+    visualSolveTime: 0,
+
+    setVisualSolveTime:
+      (visualSolveTime) =>
+        set({ visualSolveTime }),  
+
+
+
+      
+  })
+})

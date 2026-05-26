@@ -182,3 +182,83 @@
     border-right-color: var(--border);
   }
 }
+
+.app {
+
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 40px;
+
+  padding: 40px;
+}
+
+.board-section {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+.message {
+
+  color: #ef4444;
+
+  font-weight: bold;
+
+  margin-top: 20px;
+}
+
+.boards-container {
+
+  display: flex;
+
+  gap: 80px;
+
+  align-items: flex-start;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+}
+
+.countdown {
+
+  position: fixed;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  font-size: 8rem;
+
+  font-weight: bold;
+
+  color: #2563eb;
+
+  z-index: 1000;
+}
+
+.total-time {
+
+  font-weight: bold;
+
+  font-size: 1rem;
+  color: #ef4444;
+  margin-top: 20px;
+  
+}
