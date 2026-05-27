@@ -1,53 +1,132 @@
+import "./Metrics.css"
+
 type Props = {
+
   moves: number
+
   exploredNodes: number
+
   executionTime: number
+
   visualSolveTime: number
+
+  selectedAlgorithm: string
+
+  showMetrics: boolean
+
+  isSolving: boolean
 }
 
 export function Metrics({
+
   moves,
+
   exploredNodes,
+
   executionTime,
+
   visualSolveTime,
+
+  selectedAlgorithm,
+
+  showMetrics,
+
+  isSolving,
+
 }: Props){
+
+  if(!showMetrics){
+
+    if(!isSolving){
+      return null
+    }
+
+    return (
+
+      <div className="metrics-loading">
+
+        <h3>
+          {selectedAlgorithm}
+        </h3>
+
+        <p>
+          Solving...
+        </p>
+
+      </div>
+    )
+  }
 
   return (
 
-    <div
-      style={{
-        marginTop: "20px",
-        display: "flex",
-        flexDirection: "column",
-        gap: "10px"
-      }}
-    >
+    <div className="metrics-card">
 
-      <div>
-        Movimientos: {moves}
+      <div className="metrics-header">
+
+        <h2>
+          {selectedAlgorithm}
+        </h2>
+
+        <span>
+          Algorithm Metrics
+        </span>
+
       </div>
 
-      <div>
-        Nodos explorados: {exploredNodes}
-      </div>
+      <div className="metrics-grid">
 
-      <div>
-        Tiempo computacional:
-        {" "}
+        <div className="metric-box">
 
-        {
-          executionTime.toFixed(2)
-        }s
-      </div>
+          <h3>
+            Moves
+          </h3>
 
-      <div>
+          <p>
+            {moves}
+          </p>
 
-        Tiempo visual:
-        {" "}
+        </div>
 
-        {
-          visualSolveTime.toFixed(2)
-        }s
+        <div className="metric-box">
+
+          <h3>
+            Nodes
+          </h3>
+
+          <p>
+            {exploredNodes}
+          </p>
+
+        </div>
+
+        <div className="metric-box">
+
+          <h3>
+            Compute Time
+          </h3>
+
+          <p>
+            {
+              executionTime.toFixed(2)
+            }s
+          </p>
+
+        </div>
+
+        <div className="metric-box">
+
+          <h3>
+            Visual Time
+          </h3>
+
+          <p>
+            {
+              visualSolveTime.toFixed(2)
+            }s
+          </p>
+
+        </div>
+
       </div>
 
     </div>

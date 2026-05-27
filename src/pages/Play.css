@@ -1,0 +1,244 @@
+.play-page {
+
+  min-height: 100vh;
+
+  padding: 40px 20px;
+
+  box-sizing: border-box;
+}
+
+.play-header {
+
+  text-align: center;
+
+  margin-bottom: 40px;
+}
+
+.play-header h1 {
+
+  font-size: 3rem;
+
+  color: #11271d;
+
+  margin-bottom: 30px;
+}
+
+.play-header p {
+
+  color: #4b5563;
+
+  font-size: 1.1rem;
+}
+
+
+
+
+.play-content {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.boards-container {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 160px;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 40px;
+}
+
+.board-section {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+.board-section h2 {
+
+  color: #111827;
+}
+
+.message {
+
+  font-size: 1.3rem;
+
+  font-weight: bold;
+
+  color: #2563eb;
+
+  text-align: center;
+}
+
+.countdown {
+
+  position: fixed;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  font-size: 8rem;
+
+  font-weight: bold;
+
+  color: #2563eb;
+
+  z-index: 1000;
+
+  pointer-events: none;
+
+  animation:
+    countdown-pop 0.3s ease;
+}
+
+@keyframes countdown-pop {
+
+  from {
+
+    transform:
+      translate(-50%, -50%)
+      scale(0.7);
+
+    opacity: 0;
+  }
+
+  to {
+
+    transform:
+      translate(-50%, -50%)
+      scale(1);
+
+    opacity: 1;
+  }
+}
+
+.total-time {
+
+  margin-top: 15px;
+
+  color: #4b5563;
+
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px){
+
+  .play-header h1 {
+
+    font-size: 2.2rem;
+  }
+
+  .boards-container {
+
+    flex-direction: column;
+
+    gap: 40px;
+  }
+}
+
+.tile {
+
+  width: 90px;
+
+  height: 90px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 2rem;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.tile-movable:hover {
+
+  transform: scale(1.05);
+
+  background: #1d4ed8;
+}
+
+.bottom-panel {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: stretch;
+
+  gap: 30px;
+
+  margin-top: 30px;
+
+  flex-wrap: wrap;
+
+  background-color: white;
+
+  border-radius: 20px;
+  padding: 20px;
+
+  box-shadow:
+    0 4px 15px
+    rgba(0,0,0,0.08);
+
+  min-width: 280px;
+
+}
+
+.game-info {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.status-card {
+
+  background: white;
+
+  border-radius: 20px;
+
+  padding: 20px;
+
+  box-shadow:
+    0 4px 15px
+    rgba(0,0,0,0.08);
+
+  min-width: 280px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+
+  justify-content: center;
+
+  margin-top: 40px;
+}

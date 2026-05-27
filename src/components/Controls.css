@@ -1,0 +1,69 @@
+.controls {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 30px;
+}
+
+.control-button {
+
+  background: #2563eb;
+
+  color: white;
+
+  border: none;
+
+  padding: 12px 20px;
+
+  border-radius: 12px;
+
+  font-size: 1rem;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.control-button:hover {
+
+  transform: translateY(-2px);
+
+  background: #1d4ed8;
+}
+
+.control-button:disabled {
+
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+.algorithm-select {
+
+  padding: 12px;
+
+  border-radius: 12px;
+
+  border: 2px solid #d1d5db;
+
+  font-size: 1rem;
+
+  background: white;
+}
+
+.speed-slider {
+
+  width: 160px;
+
+  cursor: pointer;
+}

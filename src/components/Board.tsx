@@ -1,102 +1,84 @@
-import { motion } from "framer-motion"
-import { usePuzzleStore } from "../store/puzzleStore"
+import "./Board.css"
+
+import { canMove }
+from "../utils/canMove"
 
 type Props = {
+
   board: number[]
+
+  interactive?: boolean
+
+  onMove?:
+    (index: number) => void
 }
 
-export function Board({ board }: Props){
+export function Board({
 
-  const speed =
-    usePuzzleStore(
-        state => state.speed
-  )  
+  board,
+
+  interactive = false,
+
+  onMove
+
+}: Props){
+
+  const emptyIndex =
+    board.indexOf(0)
 
   return (
 
-    <div
-      style={{
+    <div className="board">
 
-        width: "320px",
+      {
+        board.map((tile, index) => {
 
-        height: "320px",
+          const movable =
 
-        position: "relative",
+            canMove(
+              emptyIndex,
+              index
+            )
 
-        background: "#111827",
+          return (
 
-        borderRadius: "10px"
-      }}
-    >
+            <button
 
-      {board.map((tile, index) => {
+              key={index}
 
-        if(tile === 0){
-          return null
-        }
+              className={`
+                tile
+                ${
+                  movable &&
+                  interactive
+                    ? "tile-movable"
+                    : ""
+                }
+              `}
 
-        const row =
-          Math.floor(index / 3)
+              onClick={() => {
 
-        const col =
-          index % 3
+                if(
+                  interactive &&
+                  onMove
+                ){
 
-        return (
+                  onMove(index)
+                }
+              }}
+            >
 
-          <motion.div
+              {
+                tile === 0
+                  ? ""
+                  : tile
+              }
 
-            key={tile}
+            </button>
+          )
+        })
+      }
 
-            animate={{
-
-              x: col * 110,
-
-              y: row * 110
-            }}
-
-            transition={{
-
-              duration: speedToDuration(speed)
-            }}
-
-            style={{
-
-              width: "100px",
-
-              height: "100px",
-
-              position: "absolute",
-
-              background: "#d1d5db",
-
-              display: "flex",
-
-              justifyContent: "center",
-
-              alignItems: "center",
-
-              fontSize: "2rem",
-
-              fontWeight: "bold",
-
-              borderRadius: "10px",
-
-              color: "#9ca3af"
-            }}
-          >
-
-            {tile}
-
-          </motion.div>
-        )
-      })}
     </div>
   )
-}
-
-function speedToDuration(
-  speed: number
-){
-
-  return speed / 1000
 }

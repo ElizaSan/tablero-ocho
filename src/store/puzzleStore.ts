@@ -92,6 +92,17 @@ type PuzzleStore = {
   setVisualSolveTime:
     (time: number) => void    
 
+  playerMoves: number
+
+  setPlayerMoves:
+    (moves: number) => void
+
+  showMetrics: boolean
+
+  setShowMetrics:
+    (show: boolean) => void
+
+
 
 }
 
@@ -169,18 +180,28 @@ export const usePuzzleStore =
         const newBoard =
           generateBoard()
 
-        set({
+    set({
 
-          board: newBoard,
+      board: newBoard,
 
-          playerBoard: newBoard,
+      playerBoard: newBoard,
 
-          moves: 0,
+      moves: 0,
 
-          exploredNodes: 0,
+      playerMoves: 0,
 
-          executionTime: 0
-        })
+      exploredNodes: 0,
+
+      executionTime: 0,
+
+      visualSolveTime: 0,
+
+      playerTotalTime: null,
+
+      algorithmFinishTime: null,
+
+      showMetrics: false
+    })
       },
 
       countdown: null,
@@ -215,6 +236,19 @@ export const usePuzzleStore =
         set({ playerTotalTime }), 
 
     visualSolveTime: 0,
+
+    playerMoves: 0,
+
+    showMetrics: false,
+
+    setShowMetrics:
+      (showMetrics) =>
+        set({ showMetrics }),
+
+    setPlayerMoves:
+      (playerMoves) =>
+        set({ playerMoves }),
+
 
     setVisualSolveTime:
       (visualSolveTime) =>

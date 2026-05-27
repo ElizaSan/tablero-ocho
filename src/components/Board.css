@@ -1,0 +1,63 @@
+.board {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 90px);
+
+  gap: 12px;
+
+  padding: 20px;
+
+  background: #111827;
+
+  border-radius: 20px;
+}
+
+.tile {
+
+  width: 90px;
+
+  height: 90px;
+
+  border: none;
+
+  border-radius: 16px;
+
+  background: #2563eb;
+
+  color: white;
+
+  font-size: 2rem;
+
+  font-weight: bold;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  cursor: default;
+
+  transition:
+    background 0.15s,
+    transform 0.15s;
+}
+
+.tile:empty {
+
+  background: #374151;
+}
+
+.tile-movable {
+
+  cursor: pointer;
+}
+
+.tile-movable:hover {
+
+  background: #1d4ed8;
+
+  transform: scale(1.05);
+}

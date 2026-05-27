@@ -1,0 +1,47 @@
+.algorithm-card {
+
+  width: 260px;
+
+  background: white;
+
+  border-radius: 16px;
+
+  padding: 25px;
+
+  box-shadow:
+    0 4px 15px
+    rgba(0,0,0,0.08);
+
+  transition:
+    transform 0.2s;
+}
+
+.algorithm-card:hover {
+
+  transform: translateY(-5px);
+}
+
+.algorithm-card h3 {
+
+  margin-bottom: 15px;
+
+  font-size: 1.5rem;
+
+  color: #111827;
+}
+
+.algorithm-card p {
+
+  color: #4b5563;
+
+  line-height: 1.6;
+
+  margin-bottom: 20px;
+}
+
+.algorithm-card span {
+
+  font-weight: bold;
+
+  color: #2563eb;
+}

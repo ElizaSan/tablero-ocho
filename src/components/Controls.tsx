@@ -1,3 +1,5 @@
+import "./Controls.css"
+
 type Props = {
 
   selectedAlgorithm: string
@@ -42,17 +44,11 @@ export function Controls({
 
   return (
 
-    <div
-      style={{
-        display: "flex",
-        gap: "10px",
-        marginTop: "20px"
-      }}
-    >
+    <div className="controls">
 
       <select
 
-        disabled={isSolving}
+        className="algorithm-select"
 
         value={selectedAlgorithm}
 
@@ -61,6 +57,8 @@ export function Controls({
             e.target.value
           )
         }
+
+        disabled={isSolving}
       >
 
         <option value="BFS">
@@ -81,48 +79,45 @@ export function Controls({
 
       </select>
 
-      <div
-        style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "10px"
-        }}
-        >
+<div className="controls">
 
         <span>
             {speed} ms
         </span>
 
         <input
-            disabled={isSolving}
 
-            type="range"
+          className="speed-slider"
 
-            min="50"
+          type="range"
 
-            max="1000"
+          min="50"
 
-            step="50"
+          max="1000"
 
-            value={speed}
+          step="50"
 
-            onChange={(e) =>
+          value={speed}
+
+          onChange={(e) =>
             onSpeedChange(
-                Number(e.target.value)
+              Number(e.target.value)
             )
-            }
+          }
+
+          disabled={isSolving}
         />
 
         </div>
 
-      <button 
+      <button  className="control-button"
            onClick={onShuffle}
            disabled={isSolving}
            >
         Shuffle
       </button>
 
-      <button 
+      <button className="control-button"
         onClick={onSolve}
         disabled={isSolving}>
         Solve
@@ -131,7 +126,7 @@ export function Controls({
       {
         isSolving && (
 
-            <button onClick={onStop}>
+            <button className="control-button" onClick={onStop}>
             Stop
             </button>
         )
