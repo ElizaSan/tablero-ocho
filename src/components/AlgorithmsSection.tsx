@@ -13,7 +13,7 @@ export function AlgorithmsSection(){
 
       <h2>
 
-        Algorithms Included
+        Algoritmos
 
       </h2>
 
@@ -24,12 +24,12 @@ export function AlgorithmsSection(){
           title="BFS"
 
           description="
-          Explores all nearby states
-          before going deeper.
+          Explora todos los estados cercanos
+          antes de profundizar.
           "
 
           strength="
-          Finds shortest path
+          Encuentra el camino más corto
           "
         />
 
@@ -38,12 +38,12 @@ export function AlgorithmsSection(){
           title="DFS"
 
           description="
-          Explores deeply before
-          backtracking.
+          Explora en profundidad antes de
+          retroceder.
           "
 
           strength="
-          Low memory usage
+          Bajo uso de memoria
           "
         />
 
@@ -52,12 +52,12 @@ export function AlgorithmsSection(){
           title="A*"
 
           description="
-          Uses heuristics to guide
-          the search efficiently.
+          Utiliza heurísticas para guiar
+          la búsqueda de manera eficiente.
           "
 
           strength="
-          Fast and optimal
+          Rápida y óptima
           "
         />
 
@@ -66,12 +66,12 @@ export function AlgorithmsSection(){
           title="IDDFS"
 
           description="
-          Combines DFS depth search
-          with BFS completeness.
+          Combina la búsqueda en profundidad DFS
+          con la búsqueda en amplitud BFS.
           "
 
           strength="
-          Balanced strategy
+          Estrategia equilibrada
           "
         />
 

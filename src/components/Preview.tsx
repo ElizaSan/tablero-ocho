@@ -46,7 +46,7 @@ export function Preview(){
       <div className="preview-section">
 
         <h2>
-          Player
+          Jugador
         </h2>
 
         <MiniBoard />

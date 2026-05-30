@@ -1,0 +1,109 @@
+.learn-page {
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 40px 24px;
+}
+
+.learn-hero {
+
+  text-align: center;
+
+  margin-bottom: 60px;
+}
+
+.learn-hero h1 {
+
+  font-size: 3rem;
+
+  margin-bottom: 16px;
+}
+
+.learn-hero p {
+
+  font-size: 1.2rem;
+
+  color: #6b7280;
+}
+
+.learn-section {
+
+  margin-bottom: 60px;
+}
+
+.learn-section h2 {
+
+  margin-bottom: 20px;
+}
+
+.algorithms-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 24px;
+}
+
+.algorithm-card,
+.metric-card {
+
+  background: white;
+
+  border-radius: 20px;
+
+  padding: 24px;
+
+  box-shadow:
+    0 4px 15px rgba(0,0,0,0.08);
+}
+
+.algorithm-card h3 {
+
+  color: #2563eb;
+}
+
+.comparison-table {
+
+  width: 100%;
+  color:#333538;
+  border-collapse: separate;
+}
+
+.comparison-table th,
+.comparison-table td {
+
+  border: 10px;
+  border-radius: 25px;
+  padding: 12px;
+  background-color: rgb(171, 152, 253);
+  text-align: center;
+  
+  
+  
+}
+
+
+
+.metrics-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 20px;
+}
+
+.learn-section{
+
+  background-color: #cbd9f7;
+
+  border-radius:20px;
+  padding: 10px;
+
+}
+

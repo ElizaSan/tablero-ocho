@@ -102,7 +102,10 @@ type PuzzleStore = {
   setShowMetrics:
     (show: boolean) => void
 
+  hasPlayed: boolean
 
+  setHasPlayed:
+    (hasPlayed: boolean) => void
 
 }
 
@@ -253,9 +256,18 @@ export const usePuzzleStore =
     setVisualSolveTime:
       (visualSolveTime) =>
         set({ visualSolveTime }),  
+  
+    hasPlayed: false,
+
+    setHasPlayed:
+      (hasPlayed) =>
+        set({ hasPlayed }),  
 
 
-
-      
   })
+
+  
+
+
+
 })

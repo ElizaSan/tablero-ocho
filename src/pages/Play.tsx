@@ -75,6 +75,9 @@ export function Play() {
     showMetrics,
     setShowMetrics,
 
+    hasPlayed,
+    setHasPlayed,
+
   } = usePuzzleStore()
 
   const stopRef =
@@ -223,6 +226,8 @@ export function Play() {
 
       setAlgorithmFinishTime(null)
 
+      setHasPlayed(false)
+
       shuffleBoard()
     }
 
@@ -240,6 +245,8 @@ export function Play() {
       }
 
       setMessage("")
+
+      setHasPlayed(true)
 
       setCountdown(3)
 
@@ -267,6 +274,39 @@ export function Play() {
       setPlayerTotalTime(null)
 
       handleSolve()
+
+      {
+        hasPlayed &&
+        (
+          message ||
+          playerTotalTime !== null
+        ) && (
+
+          <div className="status-card">
+
+            {
+              message && (
+                <div className="message">
+                  {message}
+                </div>
+              )
+            }
+
+            {
+              playerTotalTime !== null && (
+                <div className="total-time">
+                  Tiempo total: {playerTotalTime.toFixed(2)}s
+                </div>
+              )
+            }
+
+          </div>
+        )
+      }
+
+
+
+
     }
 
 
@@ -341,13 +381,12 @@ return (
     <div className="play-header">
 
       <h1>
-        Play Against AI
+        Juega contra la IA
       </h1>
 
       <p>
 
-        Try to solve the puzzle
-        before the algorithm does.
+        Intenta resolver el puzzle antes de que la IA lo haga.
 
       </p>
 
@@ -360,7 +399,7 @@ return (
         <div className="board-section">
 
         <h2>
-          Player
+          Jugador
         </h2>
 
         <Board
@@ -377,7 +416,7 @@ return (
         <div className="board-section">
 
           <h2>
-            Algorithm
+            Algoritmo
           </h2>
 
           <Board board={board} />
@@ -412,11 +451,12 @@ return (
 
         <div className="game-info">
 
-            {
-            (
-              message ||
-              playerTotalTime !== null
-            ) && (
+        {
+        (
+          isPlaying ||
+          algorithmFinishTime !== null ||
+          playerTotalTime !== null
+        ) && (
 
               <div className="status-card">
 

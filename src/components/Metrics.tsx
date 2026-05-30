@@ -102,7 +102,7 @@ export function Metrics({
         <div className="metric-box">
 
           <h3>
-            Compute Time
+            Tiempo computacional
           </h3>
 
           <p>
@@ -116,7 +116,7 @@ export function Metrics({
         <div className="metric-box">
 
           <h3>
-            Visual Time
+            Tiempo visual
           </h3>
 
           <p>

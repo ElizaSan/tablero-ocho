@@ -19,15 +19,15 @@ export function Navbar(){
       <div className="nav-links">
 
         <Link to="/">
-          Home
+          Inicio
         </Link>
 
         <Link to="/play">
-          Play
+          Juega
         </Link>
 
         <Link to="/learn">
-          Learn
+          Aprende
         </Link>
 
       </div>
