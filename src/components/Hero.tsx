@@ -14,16 +14,16 @@ export function Hero(){
 
       <h1 className="hero-title">
 
-        8 Puzzle AI Challenge
+        8 Puzzle IA Challenge
 
       </h1>
 
       <p className="hero-description">
 
-        Compete against classic AI
-        algorithms and discover how
-        computers solve the famous
-        sliding puzzle problem.
+      Compite contra algoritmos de IA clásicos
+      y descubre cómo
+      las computadoras resuelven el famoso
+      problema del rompecabezas deslizante.
 
       </p>
 
@@ -32,7 +32,7 @@ export function Hero(){
         className="hero-button"
       >
 
-        Play Now
+        Juega ahora
 
       </Link>
 

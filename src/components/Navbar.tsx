@@ -13,7 +13,11 @@ export function Navbar(){
     <nav className="navbar">
 
       <h1 className="logo">
-        8 Puzzle AI
+        
+        <Link to="/">
+          8 Puzzle AI
+        </Link>
+
       </h1>
 
       <div className="nav-links">
